@@ -7,7 +7,6 @@ export default function App() {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState(null);
   const [activePanel, setActivePanel] = useState("home");
-  const [words, setWords] = useState([]);
 
   // ───────── Auth ─────────
 
@@ -54,11 +53,11 @@ export default function App() {
     fetchUser();
   }, [token]);
 
-  const handleLogout = () => {
+  /*const handleLogout = () => {
     localStorage.removeItem("token");
     setToken(null);
     setUser(null);
-  };
+  };*/
 
   // ───────── UI ─────────
 
