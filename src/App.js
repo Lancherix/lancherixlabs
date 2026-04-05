@@ -87,7 +87,7 @@ export default function App() {
       />
 
       <div className="assistant-window">
-        <Home />
+        {activePanel === "home" && <Home />}
       </div>
     </div>
   );
