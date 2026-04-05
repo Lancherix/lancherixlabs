@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  background: #f2f3f5;
+  color: #1c1c1e;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* ───────── Layout ───────── */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.desktop {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+/* ───────── Floating Sidebar ───────── */
+
+.floating-sidebar {
+  position: absolute;
+  left: 16px;
+  height: 45vh;
+  width: 4vw;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7% 0.7% 0.9% 0.7%;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.floating-sidebar button {
+  background: none;
+  border: none;
+  color: #6e6e73;
+  width: 90%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.floating-sidebar button:hover {
+  color: #007aff;
+  transform: scale(1.15);
+}
+
+.sidebar-profilePicture {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ───────── Assistant Window ───────── */
+
+.assistant-window {
+  width: 80vw;
+  height: 90vh;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+}
+
+/* ───────── Header ───────── */
+
+.assistant-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #6e6e73;
+}
+
+/* ───────── Conversation ───────── */
+
+.assistant-body {
+  flex: 1;
+  margin-top: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.msg {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.msg.user {
+  color: #007aff; /* Apple blue */
+}
+
+.msg.assistant {
+  color: #1c1c1e;
+}
+
+/* ───────── Input ───────── */
+
+.assistant-input {
+  margin-top: 10px;
+}
+
+.assistant-input input {
+  width: 100%;
+  background: rgba(240, 240, 242, 0.9);
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  color: #1c1c1e;
+  outline: none;
+}
+
+.assistant-input input::placeholder {
+  color: #8e8e93;
+}
+
+/* ───────── Auth / Loading ───────── */
+
+.auth-screen,
+.loading {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f2f3f5;
 }
